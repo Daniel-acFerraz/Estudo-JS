@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+    <style>
+        div#area {
+            line-height: 30px;
+            text-align: left;
+            width: 300px;
+        }
+        div#resultado {
+            font: normal 15pt arial; 
+            width: 600px;
+            margin-top: 20px;;
+        }
+        button {
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Constructor method</h1>
+    <div id="area">
+        Qual o modelo do celular?<input type="text" id="nome"><br>
+        Qual a marca do celular?<input type="text" id="marca"><br>
+        Qual o tamanho da tela do celular?<input type="text" id="tela"><br>
+        Qual a bateria do celular?<input type="text" id="bateria"><br>
+    </div>
+    <input id="botao" value="Submit" type="button" onclick="Celular()">
+    <div id="resultado">
+        Overview
+    </div>
+ 
+    <script>
+        function Celular(nome, marca, tela, bateria){
+            nome = document.getElementById("nome")
+            marca = document.getElementById("tela")
+            tela = document.getElementById("bateria")
+            bateria = document.getElementById("bateria")   
+            resultado.innerHTML = `Esse celular (${marca.value} ${nome.value}) possui uma tela de ${tela.value} polegadas e bateria de ${bateria.value} portanto ele é foda!`
+            }
+
+    </script>
+    
+</body>
+</html>
