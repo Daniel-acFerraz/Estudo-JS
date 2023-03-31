@@ -154,3 +154,56 @@ Testing includes()
 const people = ['Adamastor', 'Joana', 'Mauricio', 'Lalau']
 
 //console.log(people.includes('Lalau'))
+
+//another way
+
+const myPeople = [
+    {id: 11, name: 'Adamastor', age: 23, group: 'editor'},
+    {id: 47, name: 'Joana', age: 28, group: 'user'},
+    {id: 85, name: 'Mauricio', age: 34, group: 'editor'},
+    {id: 97, name: 'Lalau', age: 74, group: 'admin'},
+]
+
+const filteredUsers = myPeople.filter(p => p.name.includes("au"))
+//console.log(filteredUsers)
+
+
+
+
+
+/*==============================================================================
+API REAL!!!
+==============================================================================*/
+
+async function getPeople() {
+    const response = await fetch ('https://randomuser.me/api/?results=10')
+
+    return response.json()
+}
+
+//getPeople().then(data => console.log(data))
+
+//somente mulheres
+
+getPeople().then(data => {
+    const people = data.results
+
+    //console.log(people.filter(p => p.gender === "female"))
+})
+
+//
+getPeople().then(data => {
+    const result = data.results.filter(p => p.dob.age >= 30)
+    const people = []
+
+    for( let p of result) {
+        people.push({
+            "Nome": `${p.name.first} ${p.name.last}`,
+            "Sexo": `${p.gender}`,
+            "Idade": `${p.dob.age}`
+        })
+    }
+    console.log(people)
+    console.table(people)
+})
+
