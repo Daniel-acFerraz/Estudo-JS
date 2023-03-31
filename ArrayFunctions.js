@@ -57,3 +57,100 @@ function repeatedNumbersOff (elem, index, arr) {
 /*======================================
 Testing reduce()
 ======================================*/
+
+const reducedNumbers = someOtherNumbers.reduce((numAnterior, numAtual) => numAnterior + numAtual, 0)
+//console.log(reducedNumbers)
+
+//another way
+
+const rocket = [
+    {country: 'Russia', launches: 32},
+    {country: 'Eua', launches: 23},
+    {country: 'China', launches: 21}, 
+    {country: 'Japan', launches: 13}
+]
+
+const totalLaunches = rocket.reduce((totalLancamentos, countries) => totalLancamentos + countries.launches, 0)
+//console.log(totalLaunches)
+
+
+
+
+
+/*======================================
+Testing every()
+======================================*/
+
+//testando se todos os numeros do array são maiores que 10
+//every retorna um valor booleano
+const anotherArray = [12, 5, 8, 130, 44]
+
+//console.log(anotherArray.every(elem => elem > 10))
+
+//another way
+//consultar se todas as pessoas são maiores de idade
+const galera = [
+    {id: 12, name: "Frederico", age: 8},
+    {id: 47, name: "Francisca", age: 7},
+    {id: 77, name: "Ramon", age: 48},
+    {id: 85, name: "Zenon", age: 52}
+]
+
+//console.log(galera.every(pessoa => pessoa.age >= 18))
+
+
+
+
+
+/*======================================
+Testing some()
+======================================*/
+
+//some() é a mesma coisa que o every, porem basta 1 elemento atender os parametros ao invés de todos 
+
+
+
+
+
+/*======================================
+Testing find()
+======================================*/
+//retorna O PRIMEIRO valor dentro do array que satisfaça o teste
+
+const pizzas = [
+    'mussarela',
+    'calabresa',
+    'portuguesa',
+    'marguerita'
+]
+
+const foundPizza = pizzas.find( pizza => pizza.startsWith('m'))
+//console.log(foundPizza)
+
+//another way
+
+const fruits = [
+    {name: 'jaca', quantity: 2},
+    {name: 'banana', quantity: 0},
+    {name: 'cereja', quantity: 5}
+]
+
+const foundFruit = fruits.find(fruit => fruit.name === "cereja")
+//console.log(foundFruit)
+
+
+
+
+
+/*======================================
+Testing includes()
+======================================*/
+//testar se o array inclui o numero 2
+//console.log([1, 2, 5].includes( 2 ))
+
+//another way
+//testar se tal pessoa esta no grupo
+
+const people = ['Adamastor', 'Joana', 'Mauricio', 'Lalau']
+
+//console.log(people.includes('Lalau'))
